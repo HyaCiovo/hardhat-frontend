@@ -10,7 +10,7 @@ export default function Home() {
   const [allWaves, setAllWaves] = useState([]);
 
   //合约地址
-  const contractAddress = "0x662c74BDFAee0d24C75d9626AB770072b881CCc0";
+  const contractAddress = "0x3Bda8912F9036CfeF63E14C353b0c587F190785B";
   //ABI文件，相当于合约的接口声明
   const contractABI = abi.abi;
 
@@ -201,11 +201,12 @@ export default function Home() {
     if (window.ethereum) {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+
+
+wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
       wavePortalContract.on("NewWave", onNewWave); //绑定合约的NewWave事件
     }
-
-    return () => {
+return () => {
       if (wavePortalContract) {
         wavePortalContract.off("NewWave", onNewWave); //解除事件绑定
       }
