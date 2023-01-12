@@ -7,6 +7,10 @@
   min-height: 100vh;
 }
 
+.totalWaves {
+  min-width: 100%;
+}
+
 .alchemyFaucetbackground1 {
   position: absolute;
   top: 0;

@@ -180,9 +180,9 @@ export default function Home() {
         timestamp: new Date(timestamp * 1000),
         message: message,
       },
-    ]); //更新前端allWaves对象后，div自动渲染了
+    ]); 
 
-    //totalWaves();
+    totalWaves();
   };
 
   /*
@@ -203,10 +203,10 @@ export default function Home() {
       const signer = provider.getSigner();
 
 
-wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
+      wavePortalContract = new ethers.Contract(contractAddress, contractABI, signer);
       wavePortalContract.on("NewWave", onNewWave); //绑定合约的NewWave事件
     }
-return () => {
+    return () => {
       if (wavePortalContract) {
         wavePortalContract.off("NewWave", onNewWave); //解除事件绑定
       }
@@ -249,16 +249,17 @@ return () => {
               </button>
             )}
           </div>
-          <button id="totalWaves">
-            {allWaves.map((wave, index) => {
-              return (
-                <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px" }}>
-                  <div>合约地址: {wave.address}</div>
-                  <div>时间: {wave.timestamp.toString()}</div>
-                  <div>合约信息: {wave.message}</div>
-                </div>)
-            })}
-          </button>
+          {allWaves.length > 0 &&
+            <button id="totalWaves" className={styles.totalWaves}>
+              {allWaves.map((wave, index) => {
+                return (
+                  <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px" }}>
+                    <div>合约地址: {wave.address}</div>
+                    <div>时间: {wave.timestamp.toString()}</div>
+                    <div>合约信息: {wave.message}</div>
+                  </div>)
+              })}
+            </button>}
         </div>
       </main>
     </>
