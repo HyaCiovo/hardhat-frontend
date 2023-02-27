@@ -10,7 +10,9 @@ export default function Home() {
   const [allWaves, setAllWaves] = useState([]);
 
   //合约地址
-  const contractAddress = "0xBBb8A4642a335388a5390de5c25EDBbA801346fD";
+  // const contractAddress = "0xBBb8A4642a335388a5390de5c25EDBbA801346fD";
+  const contractAddress = "0xc8bC3A42ec49e6E29Db9c23d2Bb921b3d3354F7c";
+  
   //ABI文件，相当于合约的接口声明
   const contractABI = abi.abi;
 
