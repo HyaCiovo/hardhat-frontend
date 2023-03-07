@@ -11,7 +11,7 @@ export default function Home() {
 
   //合约地址
   // const contractAddress = "0xBBb8A4642a335388a5390de5c25EDBbA801346fD";
-  const contractAddress = "0xc8bC3A42ec49e6E29Db9c23d2Bb921b3d3354F7c";
+  const contractAddress = "0x0963CAE2fB2db67f6F83f4664e3aE33Cc2669dB9";
   
   //ABI文件，相当于合约的接口声明
   const contractABI = abi.abi;
